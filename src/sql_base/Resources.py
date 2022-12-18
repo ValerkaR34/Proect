@@ -5,7 +5,7 @@ from settings import BASE_PATH
 
 class BaseWorker:
 
-    def init(self, base_path: str):
+    def __init__(self, base_path: str):
         self.base_path = base_path
 
     def db_connect(self) -> tuple[sqlite3.Connection, sqlite3.Cursor]:
