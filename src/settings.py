@@ -1,1 +1,1 @@
-BASE_PATH = 'news.db'
+BASE_PATH = './sql_base/Myproj.db'
