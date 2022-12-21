@@ -1,6 +1,5 @@
-from settings import BASE_PATH
-from sql_base import base_worker
+from settings import SQL_BATH
+from sql_base.Resources import base_worker
 
-base_worker.set_base_path(BASE_PATH)
-if not base_worker.check_base():
-    base_worker.create_base("../sql/pyt.sql")
+
+base_worker.create_base(SQL_BATH)

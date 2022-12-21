@@ -11,14 +11,14 @@ class User(BaseModel):
 
 
 class Resourses(BaseModel):
-      id: Optional
+      id: Optional[int]
       prise: str
       date_time: datetime
       view: str
 
 
 class Personal(BaseModel):
-    id: Optional
+    id: Optional[int]
     wage: str
     chart: str
     post: str
@@ -27,14 +27,14 @@ class Personal(BaseModel):
     surname: str
 
 class Extraction_points(BaseModel):
-    id: Optional
+    id: Optional[int]
     status: str
     type_id: int
     condition: str
     Firm_id: int
 
 class Firm(BaseModel):
-    id: Optional
+    id: Optional[int]
     Name: str
     Rights: Optional[str]
 
