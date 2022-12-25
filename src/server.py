@@ -1,5 +1,5 @@
-from settings import SQL_BATH
-from sql_base.Resources import base_worker
+
+from sql_base.Rescript import base_worker
 
 
-base_worker.create_base(SQL_BATH)
+base_worker.create_base('../sql/pyt.sql')

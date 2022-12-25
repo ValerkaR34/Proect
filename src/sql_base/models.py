@@ -3,16 +3,14 @@ from typing import Optional
 from datetime import datetime
 
 class User(BaseModel):
-    id:Optional[int]
+    id: Optional[int]
     login: str
     password: str
-    phone_number: str
-    reg_date: Optional[datetime]
-
+    post_id: int
 
 class Resourses(BaseModel):
       id: Optional[int]
-      prise: str
+      price: int
       date_time: datetime
       view: str
 
@@ -21,19 +19,21 @@ class Personal(BaseModel):
     id: Optional[int]
     wage: str
     chart: str
-    post: str
-    rating: str
+    post_id: int
+    rating: int
+    salary: int
     name: str
     surname: str
+
 
 class Extraction_points(BaseModel):
     id: Optional[int]
     status: str
-    type_id: int
     condition: str
-    Firm_id: int
+    Firm_Id: int
 
-class Firm(BaseModel):
+
+class Firms(BaseModel):
     id: Optional[int]
     Name: str
     Rights: Optional[str]

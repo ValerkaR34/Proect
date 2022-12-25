@@ -14,26 +14,25 @@ create table Resourses(
 
 create table Firms(
 	id integer primary key autoincrement,
-	FirmId integer not null,
 	Name varchar(100) not null,
-	rights varchar(100) not null,
-	foreign key(FirmId) references Firm(id)
+	Rights varchar(100) not null
+
 );
 
 create table User(
 	id integer primary key autoincrement,
-	Login varchar(256) not null,
-	Password varchar(256) not null,
-	phone_number varchar(11) not null unique
+	login varchar(256) not null,
+	password varchar(256) not null,
+	post_id integer not null,
+    foreign key (post_id) references Posts(id)
 );
 
 create table Extraction_points(
 	id integer primary key autoincrement,
-	typeId integer not null,
 	status integer not null,
 	condition integer not null,
-	FirmId integer not null,
-	foreign key (typeId) references Firm(id)
+	Firm_Id integer not null,
+	foreign key (Firm_id) references Firm(id)
 );
 
 create table Personal(
@@ -41,8 +40,13 @@ create table Personal(
 	name varchar(250) not null,
 	surname varchar(250) not null,
 	rating varchar(10) not null,
-	post varchar (50) not null,
+	post_id integer not null,
 	salary varchar (50) not null,
-	chart varchar (50)not null
+	chart varchar (50)not null,
+	foreign key (post_id) references Posts(id)
 );
 
+
+create table if not exists Posts(
+id INTEGER PRIMARY KEY,
+post VARCHAR(100) not null)
