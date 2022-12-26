@@ -6,10 +6,10 @@ drop table if exists Extraction_points;
 drop table if exists Personal;
 
 create table Resourses(
-	id integer primary key autoincrement,
-	prise integer not null,
-    data_time varchar(100) not null,
-	view varchar(100) not null
+id integer primary key autoincrement,
+price integer not null,
+date_time varchar(100) not null,
+view varchar(100) not null
 );
 
 create table Firms(

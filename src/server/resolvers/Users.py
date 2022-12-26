@@ -1,5 +1,5 @@
-from sql_base.models import User
-from sql_base.Rescript import base_worker
+from server.sql_base.models import User
+from server.sql_base.Rescript import base_worker
 
 
 def check_login(user: User):
@@ -15,9 +15,9 @@ def new_user(user: User):
     return n
 
 
-def update_user(user: User, User_id: int):
+def update_user(user: User, user_id: int):
     update_id = base_worker.execute(f"""update User set (login, password, post_id) = (?, ?, ?) where id=(?);""",
-                                    (user.login, user.password,  user.post_id, User_id))
+                                    (user.login, user.password,  user.post_id, user_id))
     return update_id
 
 
@@ -26,7 +26,7 @@ def get_all_user():
 
 
 def delete_user(user_id: int):
-    return base_worker.execute(query="DELETE User WHERE id=? ",
+    return base_worker.execute(query="DELETE FROM User WHERE id=? ",
                                args=(user_id,))
 
 

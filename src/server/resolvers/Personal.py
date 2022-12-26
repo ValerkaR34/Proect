@@ -1,5 +1,5 @@
-from sql_base.models import Personal
-from sql_base.Rescript import base_worker
+from server.sql_base.models import Personal
+from server.sql_base.Rescript import base_worker
 
 
 def new_personal(personal: Personal):
@@ -20,7 +20,7 @@ def get_all_personal():
 
 
 def delete_personal(personal_id: int):
-    return base_worker.execute(query="DELETE Personal WHERE id=? ",
+    return base_worker.execute(query="DELETE FROM Personal WHERE id=? ",
                                args=(personal_id,))
 
 

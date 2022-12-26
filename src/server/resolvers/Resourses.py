@@ -1,5 +1,5 @@
-from sql_base.models import Resourses
-from sql_base.Rescript import base_worker
+from server.sql_base.models import Resourses
+from server.sql_base.Rescript import base_worker
 
 
 def new_resourses(resourses: Resourses):
@@ -20,7 +20,7 @@ def get_all_resourses():
 
 
 def delete_resourses(resourses_id: int):
-    return base_worker.execute(query="DELETE Resourses WHERE id=? ",
+    return base_worker.execute(query="DELETE FROM Resourses WHERE id=? ",
                                args=(resourses_id,))
 
 

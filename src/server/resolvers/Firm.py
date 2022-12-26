@@ -1,5 +1,5 @@
-from sql_base.models import Firms
-from sql_base.Rescript import base_worker
+from server.sql_base.models import Firms
+from server.sql_base.Rescript import base_worker
 
 
 def new_firms(firms: Firms):
@@ -20,7 +20,7 @@ def get_all_firms():
 
 
 def delete_firms(firms_id: int):
-    return base_worker.execute(query="DELETE Firms WHERE id=? ",
+    return base_worker.execute(query="DELETE FROM Firms WHERE id=? ",
                                args=(firms_id,))
 
 

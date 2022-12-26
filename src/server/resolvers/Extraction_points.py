@@ -1,5 +1,5 @@
-from sql_base.models import Extraction_points
-from sql_base.Rescript import base_worker
+from server.sql_base.models import Extraction_points
+from server.sql_base.Rescript import base_worker
 
 
 def new_extraction_points(extraction_points: Extraction_points):
@@ -20,7 +20,7 @@ def get_all_extraction_points():
 
 
 def delete_extraction_points(extraction_points_id: int):
-    return base_worker.execute(query="DELETE  Extraction_points WHERE id=? ",
+    return base_worker.execute(query="DELETE FROM  Extraction_points WHERE id=? ",
                                args=(extraction_points_id,))
 
 
